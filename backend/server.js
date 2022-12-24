@@ -1,10 +1,15 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+var cors = require("cors");
+const app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+//middleware
+app.use(cors());
+app.use(express.json());
 
-app.listen(8000,()=>{
-    console.log('Running on port 8000');
-})
+app.get("/", function (req, res) {
+  res.send("Hello World");
+});
+
+app.listen(8000, () => {
+  console.log("Running on port 8000");
+});
